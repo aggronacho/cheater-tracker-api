@@ -26,7 +26,7 @@ import { CheaterModule } from './cheater/cheater.module';
           password: dbPassword,
           database: dbName,
           host: dbServer,
-          synchronize: true,
+          synchronize: process.env.NODE_ENV !== 'prod' ? true : false,
           autoLoadEntities: true,
         };
       },
